@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="world" type="Node2D"]
+position = Vector2( 448, 160 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( 64, 64 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+shape = SubResource( 1 )
+
+[node name="walls" type="Node" parent="."]
+
+[node name="wall" type="StaticBody2D" parent="walls"]
+editor/display_folded = true
+modulate = Color( 0.321569, 0.054902, 0.054902, 1 )
+position = Vector2( 480, 416 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="walls/wall"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall"]
+modulate = Color( 0.443137, 0.341176, 0.341176, 1 )
+shape = SubResource( 2 )
+
+[node name="wall2" type="StaticBody2D" parent="walls"]
+editor/display_folded = true
+modulate = Color( 0.321569, 0.054902, 0.054902, 1 )
+position = Vector2( 288, 416 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="walls/wall2"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall2"]
+modulate = Color( 0.443137, 0.341176, 0.341176, 1 )
+shape = SubResource( 2 )
+
+[node name="wall3" type="StaticBody2D" parent="walls"]
+editor/display_folded = true
+modulate = Color( 0.321569, 0.054902, 0.054902, 1 )
+position = Vector2( 96, 416 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="walls/wall3"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="walls/wall3"]
+modulate = Color( 0.443137, 0.341176, 0.341176, 1 )
+shape = SubResource( 2 )
