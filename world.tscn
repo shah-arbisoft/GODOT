@@ -1,19 +1,17 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/goku.png" type="Texture" id=2]
 [ext_resource path="res://Sprites/Player/Jump0.png" type="Texture" id=3]
-[ext_resource path="res://Sprites/Player/Jump1.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Player/Jump3.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/Player/Jump4.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Player/goku_flying.png" type="Texture" id=13]
-[ext_resource path="res://jungleDirtTileset.tres" type="TileSet" id=14]
+[ext_resource path="res://Sprites/Player/Jump4.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Player/Run0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Player/Run1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Player/Run2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Player/goku_flying.png" type="Texture" id=11]
+[ext_resource path="res://jungleDirtTileset.tres" type="TileSet" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -27,24 +25,25 @@ animations = [ {
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "fall",
-"speed": 5.0
+"speed": 1.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "flying",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32, 28 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 32.0
+height = 0.0
 
 [node name="world" type="Node2D"]
 position = Vector2( 448, 160 )
@@ -60,15 +59,15 @@ __meta__ = {
 position = Vector2( -1.43051e-06, 0 )
 scale = Vector2( 0.719101, 0.673684 )
 frames = SubResource( 1 )
-animation = "flying"
-playing = true
+animation = "idle"
+speed_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2( 0, 4 )
 shape = SubResource( 2 )
+one_way_collision_margin = 0.0
 
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 14 )
+tile_set = ExtResource( 12 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 131059, 0, 0, 131060, 1, 0, 131061, 1, 0, 131062, 1, 0, 131063, 1, 0, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 2, 0, 196595, 3, 0, 196596, 5, 0, 196597, 5, 0, 196598, 5, 0, 196599, 5, 0, 196600, 5, 0, 196601, 5, 0, 196602, 5, 0, 196603, 5, 0, 196604, 5, 0, 196605, 5, 0, 196606, 5, 0, 196607, 5, 0, 131072, 5, 0, 131073, 5, 0, 131074, 4, 0, 262131, 6, 0, 262132, 8, 0, 262133, 8, 0, 262134, 8, 0, 262135, 8, 0, 262136, 8, 0, 262137, 8, 0, 262138, 8, 0, 262139, 8, 0, 262140, 8, 0, 262141, 8, 0, 262142, 8, 0, 262143, 8, 0, 196608, 8, 0, 196609, 8, 0, 196610, 7, 0 )
+tile_data = PoolIntArray( -131084, 0, 0, -131083, 1, 0, -131082, 1, 0, -131081, 2, 0, -65548, 6, 0, -65547, 8, 0, -65546, 8, 0, -65545, 7, 0, -65538, 0, 0, -65537, 1, 0, -131072, 1, 0, -131071, 2, 0, -2, 3, 0, -1, 5, 0, -65536, 5, 0, -65535, 4, 0, 65534, 6, 0, 65535, 8, 0, 0, 8, 0, 1, 7, 0, 131059, 0, 0, 131060, 1, 0, 131061, 1, 0, 131062, 1, 0, 131063, 1, 0, 131064, 1, 0, 131065, 1, 0, 131066, 1, 0, 131067, 1, 0, 131068, 1, 0, 131069, 1, 0, 131070, 1, 0, 131071, 1, 0, 65536, 1, 0, 65537, 1, 0, 65538, 2, 0, 196595, 3, 0, 196596, 5, 0, 196597, 5, 0, 196598, 5, 0, 196599, 5, 0, 196600, 5, 0, 196601, 5, 0, 196602, 5, 0, 196603, 5, 0, 196604, 5, 0, 196605, 5, 0, 196606, 5, 0, 196607, 5, 0, 131072, 5, 0, 131073, 5, 0, 131074, 4, 0, 262131, 6, 0, 262132, 8, 0, 262133, 8, 0, 262134, 8, 0, 262135, 8, 0, 262136, 8, 0, 262137, 8, 0, 262138, 8, 0, 262139, 8, 0, 262140, 8, 0, 262141, 8, 0, 262142, 8, 0, 262143, 8, 0, 196608, 8, 0, 196609, 8, 0, 196610, 7, 0 )
