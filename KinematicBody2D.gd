@@ -13,7 +13,7 @@ func _physics_process(delta):
 	var friction = 0
 	if Input.is_action_pressed("ui_right"):
 		motion.x += acceleration
-		print("x is ",motion.x)
+		#print("x is ",motion.x)
 		motion.x = min(motion.x,max_speed) # return the smaller one among these two 
 		$Sprite.flip_h=0	
 		$Sprite.play("flying")
@@ -21,7 +21,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("ui_left"):
 		motion.x -= acceleration
 		motion.x = max(motion.x,-max_speed) # return the larger value among these two 
-		print("y is ",motion.x)
+		#print("y is ",motion.x)
 		
 		$Sprite.flip_h=1
 		$Sprite.play("flying")

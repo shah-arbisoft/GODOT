@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://jungleDirtTileset.tres" type="TileSet" id=1]
+[ext_resource path="res://player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://worldComplete.tscn" type="PackedScene" id=3]
+
+[node name="world2" type="Node"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131087, 0, 0, 131088, 2, 0, 196623, 3, 0, 196624, 4, 0, 262154, 0, 0, 262155, 1, 0, 262156, 2, 0, 262159, 3, 0, 262160, 4, 0, 327690, 6, 0, 327691, 8, 0, 327692, 7, 0, 327695, 3, 0, 327696, 4, 0, 393221, 0, 0, 393222, 2, 0, 393231, 3, 0, 393232, 4, 0, 458757, 3, 0, 458758, 4, 0, 458767, 3, 0, 458768, 4, 0, 524290, 0, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 2, 0, 589826, 6, 0, 589827, 9, 0, 589828, 9, 0, 589829, 9, 0, 589830, 9, 0, 589831, 9, 0, 589832, 9, 0, 589833, 9, 0, 589834, 9, 0, 589835, 9, 0, 589836, 9, 0, 589837, 9, 0, 589838, 9, 0, 589839, 9, 0, 589840, 9, 0, 589841, 9, 0, 589842, 7, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 224 )
+
+[node name="worldComplete" parent="." instance=ExtResource( 3 )]
+position = Vector2( 576, 224 )
+next_world = "res://world.tscn"
