@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/goku.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/Player/goku_flying.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=12]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,7 +46,7 @@ radius = 30.0
 height = 0.0
 
 [node name="player" type="KinematicBody2D"]
-position = Vector2( -368, -96 )
+position = Vector2( -1.43051e-06, 0 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -62,3 +63,21 @@ speed_scale = 0.0
 position = Vector2( 1, 1 )
 shape = SubResource( 2 )
 one_way_collision_margin = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2( -1.43051e-06, 0 )
+scale = Vector2( 0.719101, 0.673684 )
+motion_scale = Vector2( 0.1, 0.1 )
+motion_mirroring = Vector2( 640, 640 )
+
+[node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1.39063, 1.48438 )
+texture = ExtResource( 12 )
+centered = false
