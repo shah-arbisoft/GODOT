@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=52 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Player/goku.png" type="Texture" id=2]
@@ -10,8 +10,45 @@
 [ext_resource path="res://Sprites/Player/Run3.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/Player/Run4.png" type="Texture" id=9]
 [ext_resource path="res://Sprites/Player/Run7.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Player/goku_flying.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Sky.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/goku2.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Player/goku3.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Player/goku4.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Player/goku5.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Player/goku6.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Player/goku10.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Player/goku7.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Player/goku8.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Player/goku9.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Player/goku11.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Player/goku12.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Player/goku13.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Player/goku14.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Player/goku15.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Player/goku16.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Player/goku17.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Player/goku18.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Player/goku19.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Player/goku20.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Player/tile020.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Player/tile021.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Player/tile022.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Player/tile023.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Player/tile024.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Player/tile025.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Player/tile026.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Player/tile027.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Player/tile028.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Player/tile029.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Player/tile030.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Player/tile031.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Player/tile032.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/Player/tile033.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/Player/tile034.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/Player/tile035.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Player/tile036.png" type="Texture" id=46]
+[ext_resource path="res://Sprites/Player/tile037.png" type="Texture" id=47]
+[ext_resource path="res://Sprites/Player/tile038.png" type="Texture" id=48]
+[ext_resource path="res://Sprites/Sky.png" type="Texture" id=49]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -26,7 +63,7 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
-"loop": true,
+"loop": false,
 "name": "fall",
 "speed": 1.0
 }, {
@@ -35,10 +72,10 @@ animations = [ {
 "name": "run",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ) ],
+"loop": false,
 "name": "flying",
-"speed": 5.0
+"speed": 11.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -46,7 +83,7 @@ radius = 30.0
 height = 0.0
 
 [node name="player" type="KinematicBody2D"]
-position = Vector2( -1.43051e-06, 0 )
+position = Vector2( -1.43051e-06, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -57,7 +94,7 @@ position = Vector2( -1.43051e-06, 0 )
 scale = Vector2( 0.719101, 0.673684 )
 frames = SubResource( 1 )
 animation = "idle"
-speed_scale = 0.0
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 1 )
@@ -79,5 +116,5 @@ motion_mirroring = Vector2( 640, 640 )
 
 [node name="Sky" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 scale = Vector2( 1.39063, 1.48438 )
-texture = ExtResource( 12 )
+texture = ExtResource( 49 )
 centered = false
